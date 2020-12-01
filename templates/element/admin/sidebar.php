@@ -45,15 +45,42 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
             <i class="fas fa-fw fa-wrench"></i>
-            <span>Utilities</span>
+            <span>Categories</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Utilities:</h6>
-                <a class="collapse-item" href="utilities-color.html">Colors</a>
-                <a class="collapse-item" href="utilities-border.html">Borders</a>
-                <a class="collapse-item" href="utilities-animation.html">Animations</a>
-                <a class="collapse-item" href="utilities-other.html">Other</a>
+                <h6 class="collapse-header">Category Utilities:</h6>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Categories','action' => 'index']) ?>">List</a>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Categories','action' => 'add']) ?>">Add</a>
+            </div>
+        </div>
+    </li>
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#Subcategories" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Subcategories</span>
+        </a>
+        <div id="Subcategories" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Subcategory Utilities:</h6>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Subcategories','action' => 'index']) ?>">List</a>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Subcategories','action' => 'add']) ?>">Add</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#posts" aria-expanded="true" aria-controls="collapseUtilities">
+            <i class="fas fa-fw fa-wrench"></i>
+            <span>Posts</span>
+        </a>
+        <div id="posts" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Post Utilities:</h6>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Posts','action' => 'index']) ?>">List</a>
+                <a class="collapse-item" href="<?= $this->Url->build(['controller' => 'Posts','action' => 'add']) ?>">Add</a>
             </div>
         </div>
     </li>

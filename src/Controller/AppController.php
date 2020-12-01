@@ -50,4 +50,13 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
     }
+
+    public function pr($arr){
+        echo "<pre>";
+        print_r($arr);
+        echo "</pre>";
+        exit();
+
+    }
+
 }
