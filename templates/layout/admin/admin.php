@@ -36,6 +36,7 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <link href="<?php echo $this->Html->webroot; ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
 </head>
 <body>
+<?= $name ?>
 <div id="wrapper">
     <?= $this->element('admin/sidebar') ?>
     <div id="content-wrapper" class="d-flex flex-column">
