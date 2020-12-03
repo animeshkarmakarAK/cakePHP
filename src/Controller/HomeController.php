@@ -103,4 +103,16 @@ class HomeController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    public function category($id){
+        $this->viewBuilder()->setLayout('public/app');
+        $posts = $this->Posts->find()->where(['category_id'=> $id])->toArray();
+        $categories = [];
+//
+//        /*$this->pr($post->toArray());
+//        die();*/
+        $this->set(compact( 'categories'));
+
+    }
+
 }

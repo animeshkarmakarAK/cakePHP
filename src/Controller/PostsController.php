@@ -99,7 +99,7 @@ class PostsController extends AppController
      */
     public function delete($id = null)
     {
-        $this->request->allowMethod(['post', 'delete']);
+        $this->request->allcategoryowMethod(['post', 'delete']);
         $post = $this->Posts->get($id);
         if ($this->Posts->delete($post)) {
             $this->Flash->success(__('The post has been deleted.'));
@@ -111,11 +111,12 @@ class PostsController extends AppController
     }
 
 
-    public function category($id = null){
-        $post = $this->Posts->find()->where(['category_id'=> $id]);
-//        pr($post->toArray());
-        $this->viewBuilder()->setLayout('Home/category');
-        $this->set(compact('post'));
-        die();
+    public function category($id){
+        $this->viewBuilder()->setLayout('public/app');
+        $posts = $this->Posts->find()->where(['category_id'=> $id]);
+        $this->loadModel('Categories');
+        $categories = $this->Categories->find('all')->contain(['Subcategories']);
+        $this->set(compact('posts', 'categories'));
+
     }
 }
