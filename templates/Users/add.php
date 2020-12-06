@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\User $user
  */
 ?>
-<div class="row">
+<div class="row justify-content-center">
     <aside class="column">
         <div class="side-nav">
             <h4 class="heading"><?= __('Actions') ?></h4>
@@ -17,13 +17,13 @@
             <fieldset>
                 <legend><?= __('Add User') ?></legend>
                 <?php
-                    echo $this->Form->control('name');
-                    echo $this->Form->control('email');
-                    echo $this->Form->control('password');
-                    echo $this->Form->control('status');
+                    echo $this->Form->control('name', ['class'=>'form-control']);
+                    echo $this->Form->control('email', ['class'=>'form-control']);
+                    echo $this->Form->control('password', ['class'=>'form-control']);
+                    echo $this->Form->control('status', ['class'=>'form-control']);
                 ?>
             </fieldset>
-            <?= $this->Form->button(__('Submit')) ?>
+            <?= $this->Form->button(__('Submit', ['class'=> 'btn btn-success'])) ?>
             <?= $this->Form->end() ?>
         </div>
     </div>

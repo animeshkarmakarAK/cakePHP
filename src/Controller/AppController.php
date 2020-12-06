@@ -49,7 +49,27 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
-    }
+
+
+$this->loadComponent('Auth', [
+'authenticate' => [
+'Form' => [
+'fields' => [
+'username' => 'email',
+'password' => 'password'
+]
+]
+],
+'loginAction' => [
+'controller' => 'Users',
+'action' => 'login'
+],
+'unauthorizedRedirect' => $this->referer()]);
+
+
+$this->Auth->allow(['display']);
+
+ }
 
     public function pr($arr){
         echo "<pre>";
