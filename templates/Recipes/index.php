@@ -23,6 +23,9 @@
     </div>
 </div>
 
+
 <script>
     var stars= document.getElementsByClassName('fa-star');
+    
+
 </script>

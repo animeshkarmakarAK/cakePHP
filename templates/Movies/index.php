@@ -12,7 +12,6 @@
     <?php foreach($movies as $movie): ?>
     <div class="col-md-3">
         <div class="poster-image" style="color: #000">
-        <img src="<?php echo $this->Html->webroot; ?>/img/<?php echo $movie->poster ?>" alt="">
         <p><?php echo $this->Html->image($movie->poster, array('width' => '200' ,'height' => '200'))?></p>
             
         </div>
