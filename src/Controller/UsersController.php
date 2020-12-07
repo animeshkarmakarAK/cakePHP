@@ -16,6 +16,16 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Renders view
      */
+
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        // Configure the login action to not require authentication, preventing
+        // the infinite redirect loop issue
+        // $this->Authentication->addUnauthenticatedActions(['controller' =>'Users', 'action'=>'login']);
+    }
+
+
     public function index()
     {
         $users = $this->paginate($this->Users);
@@ -110,24 +120,24 @@ class UsersController extends AppController
         if ($this->request->is('post')) {
         $user = $this->Auth->identify();
         if ($user) {
-        $this->Auth->setUser($user);
-        return $this->redirect($this->Auth->redirectUrl());
-        }
-        $this->Flash->error('Your username or password is incorrect.');
+            $this->Auth->setUser($user);
+            // return $this->redirect($this->Auth->redirectUrl());
+            $redirect = $this->request->getQuery('redirect', [
+                'controller' => 'Recipes',
+                'action' => 'index',
+            ]);
+            return $this->redirect($redirect);
+            }
+            $this->Flash->error('Your username or password is incorrect.');
         }
     }
 
 
-    public function initialize(): void
-{
-parent::initialize();
-$this->Auth->allow(['logout']);
-}
-public function logout()
-{
-$this->Flash->success('You are now logged out.');
-return $this->redirect($this->Auth->logout());
-}
+    public function logout()
+        {
+        $this->Flash->success('You are now logged out.');
+        return $this->redirect($this->Auth->logout());
+        }
 
 
 

@@ -51,23 +51,23 @@ class AppController extends Controller
         //$this->loadComponent('FormProtection');
 
 
-$this->loadComponent('Auth', [
-'authenticate' => [
-'Form' => [
-'fields' => [
-'username' => 'email',
-'password' => 'password'
-]
-]
-],
-'loginAction' => [
-'controller' => 'Users',
-'action' => 'login'
-],
-'unauthorizedRedirect' => $this->referer()]);
+        $this->loadComponent('Auth', [
+        'authenticate' => [
+        'Form' => [
+        'fields' => [
+        'username' => 'email',
+        'password' => 'password'
+        ]
+        ]
+        ],
+        'loginAction' => [
+        'controller' => 'Users',
+        'action' => 'login'
+        ],
+        'unauthorizedRedirect' => $this->referer()]);
 
 
-$this->Auth->allow(['display']);
+        $this->Auth->allow(['/users/add']);
 
  }
 

@@ -22,6 +22,7 @@ class RecipesController extends AppController
      */
     public function index()
     {
+        $this->Auth->allow('login');
         // $this->render();
         $recipes = TableRegistry::getTableLocator()->get('foods')->find();
 

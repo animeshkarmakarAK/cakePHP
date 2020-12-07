@@ -6,8 +6,19 @@
     <?= $this->Form->create() ?>
     <?= $this->Form->control('email', ['class' => 'form-control']) ?>
     <?= $this->Form->control('password' , ['class' => 'form-control']) ?>
-    <?= $this->Form->button('Login', ['class' => 'btn btn-success mt-5 btn-block']) ?>
+    <?= $this->Form->button('Login', ['class' => 'btn btn-success mt-5 mb-5 btn-block']) ?>
     <?= $this->Form->end() ?>
-    </div>
 
+
+    <p class = "text-center">Not an user? <?= $this->Html->link(__('Register'), ['controller' => 'Users','action' => 'add']) ?></p>
+
+    </div>
 </div>
+
+
+<script>
+
+var nav = document.getElementsByClassName('navbar');
+nav[0].style.display = "none";
+
+</script>
