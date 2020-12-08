@@ -65,6 +65,10 @@ $routes->scope('/', function (RouteBuilder $builder) {
     $builder->connect('recipe', ['controller' => 'Recipes', 'action' => 'index']);
     $builder->connect('recipe/add', ['controller' => 'Recipes', 'action' => 'add'])->setMethods(['GET']);
     $builder->connect('recipe/add', ['controller' => 'Recipes', 'action' => 'store'])->setMethods(['POST']);
+    
+    
+    
+    $builder->connect('/registration', ['controller' => 'Users', 'action' => 'add'])->setMethods(['GET']);
 
     /*
      * Connect catchall routes for all controllers.

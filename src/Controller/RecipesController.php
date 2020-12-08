@@ -22,14 +22,15 @@ class RecipesController extends AppController
      */
     public function index()
     {
+        $user = $this->Auth->user('id');
         $this->Auth->allow('login');
         // $this->render();
         $recipes = TableRegistry::getTableLocator()->get('foods')->find();
 
         // $recipes = $this->paginate($this->Movies);
 
-        $this->set(compact('recipes'));
-    }
+        $this->set(compact('recipes', 'user'));
+    } 
 
     /**
      * View method

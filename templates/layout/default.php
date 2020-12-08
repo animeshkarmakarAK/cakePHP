@@ -47,13 +47,16 @@ $cakeDescription = 'Recipe - Easy recipes';
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
     <?php echo $this->Html->link('Home', '/recipe', ['class' => 'nav-item nav-link active'])?>
+  
     <?php echo $this->Html->link('Logout', '/logout', ['class' => 'nav-item nav-link float-right ml-auto mr-0 color-red'])?>
     </div>
   </div>
 </nav>
 
-<div class="row">
-    <?php echo $this->Flash->render(); ?>
+<div class="row justify-content-center" style= "font-size: 10px; ">
+  <div class="col-md-6" style = "font-size: 10px; ">
+  <?php echo $this->Flash->render(); ?>
+  </div>
 </div>
 
 <div id="wrapper">

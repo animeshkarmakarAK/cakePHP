@@ -33,6 +33,13 @@ class UsersController extends AppController
         $this->set(compact('users'));
     }
 
+    public function registration()
+    {
+        $this->autoRender = false;
+        $this->render('Users/add');
+
+    }
+
     /**
      * View method
      *
