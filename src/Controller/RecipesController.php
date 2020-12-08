@@ -22,6 +22,13 @@ class RecipesController extends AppController
      */
     public function index()
     {
+        $conn = ConnectionManager::get('default');
+        $user_id = $this->Auth->user('id');
+        $user_info = $conn->execute('select id, name from users where users.id = '.$user_id.' ');
+        // $user_data = $this->User->findById($user_id);
+        var_dump($user_id);
+
+
         $user = $this->Auth->user('id');
         $this->Auth->allow('login');
         // $this->render();
@@ -32,6 +39,12 @@ class RecipesController extends AppController
         $this->set(compact('recipes', 'user'));
     } 
 
+    public function addIngredients()
+    {
+        $this->autoRender = false;
+        echo 'Add this ingredients';
+    }
+
     /**
      * View method
      *
@@ -39,14 +52,7 @@ class RecipesController extends AppController
      * @return \Cake\Http\Response|null|void Renders view
      * @throws \Cake\Datasource\Exception\RecordNotFoundException When record not found.
      */
-    public function view($id = null)
-    {
-        $movie = $this->Movies->get($id, [
-            'contain' => [],
-        ]);
-
-        $this->set(compact('movie'));
-    }
+    
 
     /**
      * Add method

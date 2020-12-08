@@ -67,7 +67,7 @@ class AppController extends Controller
         'unauthorizedRedirect' => $this->referer()]);
 
 
-        $this->Auth->allow(['add']);
+        $this->Auth->allow(['add', 'login', 'index']);
 
  }
 

@@ -20,6 +20,9 @@
     <div class="row">
         <p>Rating: <?= h($food->rating)?></p>
     </div>
+    <div class="add-ingredients row ml-auto mr-0">
+        <?php echo $this->Html->link('Add Ingredients',  ['controller' =>'Recipes', 'action' => 'addIngredients']); ?>
+    </div>
 </div>
 
 
